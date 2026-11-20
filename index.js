@@ -22,6 +22,11 @@ async function main() {
     totalSec += sec;
     console.log(`Request #${i}: ${mb.toFixed(2)} MB, ${sec.toFixed(2)} s`);
   }
+
+  console.log("Done!");
+  console.log(`Average request time: ${(totalSec / 10).toFixed(2)} s`);
+  console.log(`Total downloaded: ${totalMB.toFixed(2)} MB`);
+  console.log(`Download speed: ${(totalMB / totalSec).toFixed(2)} MB/s`);
 }
 
 main().catch((err) => {
