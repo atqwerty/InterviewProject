@@ -6,6 +6,10 @@ if (!url) {
 }
 
 async function main() {
+  console.log(`Attempting to download from ${url}`);
+  totalMB = 0;
+  totalSec = 0;
+
   for (let i = 1; i <= 10; i++) {
     const start = performance.now();
     const res = await fetch(url);
@@ -16,9 +20,7 @@ async function main() {
 
     totalMB += mb;
     totalSec += sec;
-    console.log(
-      `Request ${i}: ${res.status}, ${mb.toFixed(2)} MB, ${sec.toFixed(2)} s`,
-    );
+    console.log(`Request #${i}: ${mb.toFixed(2)} MB, ${sec.toFixed(2)} s`);
   }
 }
 
